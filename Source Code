@@ -16,7 +16,7 @@ vector<string> v;
 vector<string> num;
 map<string,string> list;
 
-class Messenger
+class frnd
 {
     vector<string> flist;  
     vector<string> number;
@@ -30,14 +30,14 @@ class Messenger
 
     public:
     map<string,chat> sms;       
-    void add_Messenger(string);
-    void un_Messenger(string);
-    void disp_Messenger(string);
+    void add_frnd(string);
+    void un_frnd(string);
+    void disp_frnd(string);
     void chat_on(string,string,char*);
     void inbox(string,string);
 };
 
-void Messenger::chat_on(string uname,string reciepient,char *message)
+void frnd::chat_on(string uname,string reciepient,char *message)
 {
     vector<string>::iterator iv;
     int flag=0;
@@ -72,7 +72,7 @@ void Messenger::chat_on(string uname,string reciepient,char *message)
 }
 
 
-void Messenger::inbox(string uname,string reciepient)
+void frnd::inbox(string uname,string reciepient)
 {
   cout<<"\nWelcome "<<uname<<" to your Inbox\n\n";
   cout<<"All Messages in your Inbox:\n\n";
@@ -81,7 +81,7 @@ void Messenger::inbox(string uname,string reciepient)
 
 }
     
-void Messenger::add_Messenger(string uname)
+void frnd::add_frnd(string uname)
 {
     vector<string>::iterator iv;
     map<string,string>::iterator iuser;
@@ -140,7 +140,7 @@ void Messenger::add_Messenger(string uname)
 
 }
 
-void Messenger::disp_Messenger(string uname)
+void frnd::disp_frnd(string uname)
 {
     int c=0;
     //vector<string>::iterator it;
@@ -154,7 +154,7 @@ void Messenger::disp_Messenger(string uname)
     cout<<endl<<endl<<"\nTotal friends: "<<c;
 }
 
-void Messenger::un_Messenger(string uname)
+void frnd::un_frnd(string uname)
 {
     if(flist.empty())
     {
@@ -295,7 +295,7 @@ void page1()
  }
 }
 
-map<string,Messenger> f;
+map<string,frnd> f;
 
 void page2(string uname)
 {
@@ -345,7 +345,7 @@ void page2(string uname)
 
     case 3:
       {
-        f[uname].disp_Messenger(uname);
+        f[uname].disp_frnd(uname);
         cout<<"\npress any number except '0' to go back to main menu\n";
         cin>>choice3;
         if(choice3)
@@ -356,7 +356,7 @@ void page2(string uname)
 
     case 4:
       {
-        f[uname].add_Messenger(uname);
+        f[uname].add_frnd(uname);
         cout<<"\npress any number except '0' to go back to main menu\n";
         cin>>choice3;
         if(choice3)
@@ -366,7 +366,7 @@ void page2(string uname)
 
     case 5:
       {
-        f[uname].un_Messenger(uname);
+        f[uname].un_frnd(uname);
         cout<<"\npress any number except '0' to go back to main menu\n";
         cin>>choice3;
         if(choice3)
